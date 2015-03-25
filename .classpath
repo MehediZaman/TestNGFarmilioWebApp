@@ -43,5 +43,6 @@
 	<classpathentry kind="lib" path="E:/Dropbox/Java and Selenium/Selenium 2 for Java Client/selenium-2.42.2/libs/xercesImpl-2.11.0.jar"/>
 	<classpathentry kind="lib" path="E:/Dropbox/Java and Selenium/Selenium 2 for Java Client/selenium-2.42.2/libs/xml-apis-1.4.01.jar"/>
 	<classpathentry kind="lib" path="E:/Dropbox/_Selenium Workspace/selenium-server-standalone-2.45.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

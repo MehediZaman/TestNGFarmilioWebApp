@@ -1,10 +1,12 @@
 package com.farmilio;
 
+import org.junit.runners.MethodSorters;
+import org.junit.FixMethodOrder;
+import static org.junit.Assert.*;
 import java.util.concurrent.TimeUnit;
-import org.testng.annotations.Test;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.Assert;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,33 +14,29 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 
-public class Farmilio_Regression {
-  
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class Farmilio_RegressionTest {
+
 	public WebDriver driver = new FirefoxDriver();
-	  //driver = new FirefoxDriver();
-	  //driver = new ChromeDriver();
 	
-	  @BeforeTest
-	  public void setup() {
-		  
-		
+	@Before
+	public void setUp() throws Exception {
 		  String appUrl = "http://staging.farmilio.net/";	
 		  driver.get(appUrl);
 		  driver.manage().window().maximize();
-		  //driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	  }
-
+		  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
 	
-	  @Test(priority=0)
-	  public void verifyRegistration() {
-
+	
+	@Test
+	public void verify_Registration() {
+		
 	  // Executing Test Case# 1
-	      System.out.println("Executing Test Case# 1 - User registration");
+	     System.out.println("Executing Test Case# 1 - User registration");
 	      
 	  //click on the Login button
 	   driver.findElement(By.partialLinkText("Log")).click(); ;
- 
+
 	    //create new account (Deutsch interface)
 	    driver.findElement(By.partialLinkText("Konto")).click(); ; 
 	     
@@ -64,14 +62,12 @@ public class Farmilio_Regression {
 	    System.out.println("Account already exists.");
 	     
 	    }
-	  }
- 
-	    
-	  @Test(priority=1)
-	  public void verifyBlankLogin() {
-	  
+	}
+	
+	@Test
+	public void verifyBlankLogin() {
 		
-		  //click on the Login button in Nav bar
+		//click on the Login button in Nav bar
 		     WebElement logInSubmit = driver.findElement(By.partialLinkText("Log"));
 		      logInSubmit.click();
 		      
@@ -96,16 +92,17 @@ public class Farmilio_Regression {
 		    if(driver.findElement(By.name("user[password]")).getText() == "")
 		    {
 		
-		    	Assert.assertEquals("×\nE-Mail-Adresse oder Passwort ungültig.", driver.findElement(By.className("message")).getText());
+		    	assertEquals("×\nE-Mail-Adresse oder Passwort ungültig.", driver.findElement(By.className("message")).getText());
 		    }
 		    
 		    else
 		    	
-		    Assert.assertEquals("×\nUngültige Anmeldedaten.", driver.findElement(By.className("message")).getText());	
-	  }
-	  
+		    	assertEquals("×\nUngültige Anmeldedaten.", driver.findElement(By.className("message")).getText());	
+	 
+	}
 
-	  @Test(priority=1)
+
+	  @Test
 	  public void verifyInvalidLogin() {
 	  
 		
@@ -134,10 +131,10 @@ public class Farmilio_Regression {
 		    WebElement logInButton = driver.findElement(By.xpath("//button[@type='submit']"));
 		    logInButton.click();
 		    
-		    Assert.assertEquals("×\nE-Mail-Adresse oder Passwort ungültig.", driver.findElement(By.className("message")).getText());
+		    assertEquals("×\nE-Mail-Adresse oder Passwort ungültig.", driver.findElement(By.className("message")).getText());
 	  }
 	  
-	  @Test(priority=1)
+	  @Test
 	  public void verifyValidLogin() {
 	  
 		  //click on the Login button in Nav bar
@@ -164,7 +161,7 @@ public class Farmilio_Regression {
 		    logInButton.click();
 	  }
 	  
-		    @Test(priority=2)
+		    @Test
 			  public void verifyQuickSearch()  {
 	    
 		    	// Executing Test Case# 3(A)
@@ -178,17 +175,33 @@ public class Farmilio_Regression {
 			 //click on the Search button
 			    WebElement searchButton = driver.findElement(By.xpath("//button[@type='submit']"));
 			    searchButton.click();
-			    
-			  
-			    	    
-	  }
+		  }
 	
 
-		    @Test(priority=3)
+		    @Test
 			  public void verifyMyOffers() {
 			  
-		    	// Executing Test Case# 4(A)
+		   // Executing Test Case# 4(A)
 			      System.out.println("Executing Test Case# 4(A) - My Offers");
+			      
+		    //click on the Login button in Nav bar
+			     WebElement logInSubmit = driver.findElement(By.partialLinkText("Log"));
+			      logInSubmit.click();
+			      
+			// enter a valid username in the email textbox
+			      WebElement username = driver.findElement(By.name("user[email]"));
+			      username.clear();
+			      username.sendKeys("sqaone@yahoo.com");
+			 
+			// enter a valid password in the password textbox
+			    WebElement password = driver.findElement(By.name("user[password]"));
+			    password.clear();
+			    password.sendKeys("carbon");
+			    
+			
+			 //click on the Login button
+			    WebElement logInButton = driver.findElement(By.xpath("//button[@type='submit']"));
+			    logInButton.click();
 			      
 		    	 //click on the Benutzer Details (User details) button
 		    	WebElement myAccountButton = driver.findElement(By.partialLinkText("Benutzer"));
@@ -212,20 +225,20 @@ public class Farmilio_Regression {
 			      offerBreadcrumbsLink.click();
 		    }
 		    
-			@Test(priority=4)
+			@Test
 		    public void verifyAdvancedSearch() {
 				  
-			    	// Executing Test Case# 4(A)
-				      System.out.println("Executing Test Case# 5(A) - Advanced Search");
+		   //Executing Test Case# 4(A)
+			 System.out.println("Executing Test Case# 5(A) - Advanced Search");
 				      
-				    //click on the Suche (Advanced Search) button
-				      WebElement advancedSearchLink = driver.findElement(By.partialLinkText("Suche"));
-				      advancedSearchLink.click();
+			//click on the Suche (Advanced Search) button
+				   WebElement advancedSearchLink = driver.findElement(By.partialLinkText("Suche"));
+				   advancedSearchLink.click();
 				      
 			//Select a lookup data from category DropDown	    
-					    WebElement categoryDDL = driver.findElement(By.id("category"));
-					    Select clickCategoryDDL = new Select(categoryDDL); 
-					    clickCategoryDDL.selectByValue("16");	
+					 WebElement categoryDDL = driver.findElement(By.id("category"));
+					 Select clickCategoryDDL = new Select(categoryDDL); 
+					 clickCategoryDDL.selectByValue("16");	
 					    
 			//Select a lookup data from product DropDown	    
 					    WebElement productDDL = driver.findElement(By.id("product"));
@@ -242,29 +255,48 @@ public class Farmilio_Regression {
 					    searchAdvancedButton.click();  		         
 	  }
 	 
-		@Test(priority=5)
+		@Test
 		public void verifyShareFarmilio() {
 				  
 		// Executing Test Case# 6(A)
-				      System.out.println("Executing Test Case# 6(A) - Share Farmilio");
-				      System.lineSeparator();
+			    System.out.println("Executing Test Case# 6(A) - Share Farmilio");
+				System.lineSeparator();
 				      
+	    //click on the Login button in Nav bar
+				WebElement logInSubmit = driver.findElement(By.partialLinkText("Log"));
+			    logInSubmit.click();
+					      
+		// enter a valid username in the email textbox
+			    WebElement username = driver.findElement(By.name("user[email]"));
+			    username.clear();
+			    username.sendKeys("sqaone@yahoo.com");
+					 
+		// enter a valid password in the password textbox
+				 WebElement password = driver.findElement(By.name("user[password]"));
+				 password.clear();
+			     password.sendKeys("carbon");
+					    
+					
+		//click on the Login button
+				  WebElement logInButton = driver.findElement(By.xpath("//button[@type='submit']"));
+				  logInButton.click();
+				  
 		//click on the Share (Empfehlen) Link
-				      WebElement shareFarmilioLink = driver.findElement(By.partialLinkText("Teilen"));
-				      shareFarmilioLink.click();	
+				   WebElement shareFarmilioLink = driver.findElement(By.partialLinkText("Teilen"));
+				   shareFarmilioLink.click();	
 				      	    
 		  //click on the Recommend Farmilio(Empfehlen) Link
-				      WebElement recommendFarmilioLink = driver.findElement(By.partialLinkText("Empfehlen"));
-				      recommendFarmilioLink.click();			
+				    WebElement recommendFarmilioLink = driver.findElement(By.partialLinkText("Empfehlen"));
+				    recommendFarmilioLink.click();			
 				      
 	      //click on the Template (Vorlage) Link		      
-				      WebElement templateButton = driver.findElement(By.partialLinkText("Vorlage"));
-				      templateButton.click();
+				    WebElement templateButton = driver.findElement(By.partialLinkText("Vorlage"));
+				     templateButton.click();
 
 		//Enter email address in to the receiver field (Vorlage) Link		      
-				      WebElement inputEmailReceiver = driver.findElement(By.id("inputEmail3"));
-				     // inputEmailReceiver.clear();
-				      inputEmailReceiver.sendKeys("mehedizaman@rocketmail.com,mehedizmn@yahoo.com");
+				    WebElement inputEmailReceiver = driver.findElement(By.id("inputEmail3"));
+				    inputEmailReceiver.clear();
+				    inputEmailReceiver.sendKeys("mehedizaman@rocketmail.com,mehedizmn@yahoo.com");
 				      
 		//Enter the subject in the email of the Recommend Farmilio form	      
 				      WebElement inputEmailSubject = driver.findElement(By.name("subject"));
@@ -281,12 +313,11 @@ public class Farmilio_Regression {
 				      inputEmailSubmit.click();
 			      }
 			      
-	  @AfterTest
-	  public void teardown() {
-		  
-	      driver.close();
-	      System.lineSeparator();
-		  System.out.println("Finished the tests successfully");
-	  }
-
+	@After
+	public void tearDown() throws Exception {
+		
+		driver.close();
+	    System.lineSeparator();
+	}
+	
 }

@@ -5,7 +5,14 @@
     <classes>
       <class name="com.farmilio.Farmilio_Regression">
         <methods>
+          <include name="verifyInvalidLogin"/>
+          <include name="verifyQuickSearch"/>
+          <include name="verifyMyOffers"/>
+          <include name="verifyRegistration"/>
+          <include name="verifyShareFarmilio"/>
           <include name="teardown"/>
+          <include name="verifyBlankLogin"/>
+          <include name="verifyValidLogin"/>
           <include name="setup"/>
           <include name="verifyAdvancedSearch"/>
         </methods>

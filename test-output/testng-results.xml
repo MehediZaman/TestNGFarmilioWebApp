@@ -2,48 +2,48 @@
 <testng-results skipped="0" failed="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="76016" started-at="2015-03-12T04:14:13Z" finished-at="2015-03-12T04:15:29Z">
+  <suite name="Default suite" duration-ms="82068" started-at="2015-03-24T10:33:54Z" finished-at="2015-03-24T10:35:16Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="76016" started-at="2015-03-12T04:14:13Z" finished-at="2015-03-12T04:15:29Z">
+    <test name="Default test" duration-ms="82068" started-at="2015-03-24T10:33:54Z" finished-at="2015-03-24T10:35:16Z">
       <class name="com.farmilio.Farmilio_Regression">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="setup" is-config="true" duration-ms="7755" started-at="2015-03-12T10:14:13Z" finished-at="2015-03-12T10:14:21Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="setup" is-config="true" duration-ms="11419" started-at="2015-03-24T16:33:54Z" finished-at="2015-03-24T16:34:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="verifyRegistration()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyRegistration" duration-ms="9037" started-at="2015-03-12T10:14:21Z" finished-at="2015-03-12T10:14:30Z">
+        <test-method status="PASS" signature="verifyRegistration()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyRegistration" duration-ms="8580" started-at="2015-03-24T16:34:05Z" finished-at="2015-03-24T16:34:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyRegistration -->
-        <test-method status="PASS" signature="verifyBlankLogin()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyBlankLogin" duration-ms="6248" started-at="2015-03-12T10:14:30Z" finished-at="2015-03-12T10:14:36Z">
+        <test-method status="PASS" signature="verifyBlankLogin()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyBlankLogin" duration-ms="7404" started-at="2015-03-24T16:34:14Z" finished-at="2015-03-24T16:34:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyBlankLogin -->
-        <test-method status="PASS" signature="verifyInvalidLogin()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyInvalidLogin" duration-ms="6620" started-at="2015-03-12T10:14:36Z" finished-at="2015-03-12T10:14:43Z">
+        <test-method status="PASS" signature="verifyInvalidLogin()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyInvalidLogin" duration-ms="5249" started-at="2015-03-24T16:34:21Z" finished-at="2015-03-24T16:34:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyInvalidLogin -->
-        <test-method status="PASS" signature="verifyValidLogin()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyValidLogin" duration-ms="6836" started-at="2015-03-12T10:14:43Z" finished-at="2015-03-12T10:14:50Z">
+        <test-method status="PASS" signature="verifyValidLogin()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyValidLogin" duration-ms="8470" started-at="2015-03-24T16:34:26Z" finished-at="2015-03-24T16:34:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyValidLogin -->
-        <test-method status="PASS" signature="verifyQuickSearch()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyQuickSearch" duration-ms="4363" started-at="2015-03-12T10:14:50Z" finished-at="2015-03-12T10:14:54Z">
+        <test-method status="PASS" signature="verifyQuickSearch()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyQuickSearch" duration-ms="5656" started-at="2015-03-24T16:34:35Z" finished-at="2015-03-24T16:34:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyQuickSearch -->
-        <test-method status="PASS" signature="verifyMyOffers()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyMyOffers" duration-ms="7328" started-at="2015-03-12T10:14:54Z" finished-at="2015-03-12T10:15:01Z">
+        <test-method status="PASS" signature="verifyMyOffers()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyMyOffers" duration-ms="9128" started-at="2015-03-24T16:34:41Z" finished-at="2015-03-24T16:34:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyMyOffers -->
-        <test-method status="PASS" signature="verifyAdvancedSearch()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyAdvancedSearch" duration-ms="18970" started-at="2015-03-12T10:15:01Z" finished-at="2015-03-12T10:15:20Z">
+        <test-method status="PASS" signature="verifyAdvancedSearch()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyAdvancedSearch" duration-ms="15995" started-at="2015-03-24T16:34:50Z" finished-at="2015-03-24T16:35:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAdvancedSearch -->
-        <test-method status="PASS" signature="verifyShareFarmilio()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyShareFarmilio" duration-ms="8724" started-at="2015-03-12T10:15:20Z" finished-at="2015-03-12T10:15:29Z">
+        <test-method status="PASS" signature="verifyShareFarmilio()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="verifyShareFarmilio" duration-ms="9969" started-at="2015-03-24T16:35:06Z" finished-at="2015-03-24T16:35:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyShareFarmilio -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="teardown" is-config="true" duration-ms="125" started-at="2015-03-12T10:15:29Z" finished-at="2015-03-12T10:15:29Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.farmilio.Farmilio_Regression@3bfa16]" name="teardown" is-config="true" duration-ms="174" started-at="2015-03-24T16:35:16Z" finished-at="2015-03-24T16:35:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
